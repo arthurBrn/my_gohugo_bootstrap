@@ -1,0 +1,32 @@
+{{ partial "head.html" }}
+<header>
+    {{ partial "header.html" }}
+</header>
+<div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron text-center">
+            <h1>All our articles </h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    {{ range first 10 .Data.Pages }}
+    <div class="col-md-4">
+        <div class="card">
+            <img src="http://via.placeholder.com/640x360" class="card-img-top" alt=""> {{ if eq .Type "posts" }}
+            <div class="card-body">
+                <h3 class="card-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                <p>{{ .Content | truncate 18 }}</p>
+            </div>
+            <div class="card-footer">
+                <small>{{ .Date }}</small>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ partial "footer.html" }}

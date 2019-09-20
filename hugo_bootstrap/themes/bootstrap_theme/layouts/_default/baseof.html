@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{ partial "head.html"}}
+    <title>Base of</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            {{ partial "header.html" }}
+        </header>
+    </div>
+    <main>
+        <div class="container-fluid mt-3">
+            {{ block "main" . }} {{ end }}
+        </div>
+    </main>
+    {{ partial "footer.html" }}
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Hugo site"
+theme = "bootstrap_theme"
+themesDir = "./themes"
+
+[permalinks]
+ posts = "/:filename/"
